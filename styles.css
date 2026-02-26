@@ -1,0 +1,957 @@
+ :root {
+      --mp-navy: #0f2d52;
+      --mp-red: #c51e35;
+      --mp-ash: #e6eaef;
+      --mp-charcoal: #1f2933;
+      --mp-white: #ffffff;
+      --mp-black: #111111;
+    }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      color: var(--mp-charcoal);
+      background: linear-gradient(180deg, #f8fafc 0%, #eef2f6 100%);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .brand-font {
+      font-family: 'Teko', sans-serif;
+      letter-spacing: 0.6px;
+    }
+
+    .top-strip {
+      background: var(--mp-black);
+      color: var(--mp-white);
+      font-size: 0.9rem;
+    }
+
+   /* --- SAUFICO Inspired Navigation --- */
+.navigation-clean {
+  background: transparent; /* Starts transparent for the hero overlay */
+  padding: 30px 0;
+  transition: all 0.3s ease;
+  border-bottom: none;
+}
+
+/* Scroll Effect - Navbar becomes dark navy when moving down */
+.navigation-clean.scrolled {
+  background: var(--mp-navy);
+  padding: 15px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Brand/Logo Styling */
+.brand-container {
+  display: inline-block;
+}
+
+.navbar-brand {
+  font-family: 'Teko', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff !important;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.brand-underline {
+  height: 6px;
+  background: var(--mp-red); /* Your brand red */
+  width: 100%;
+  margin-top: -5px;
+}
+
+/* Links */
+.nav-link {
+  color: #fff !important;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  padding: 10px 15px !important;
+  transition: 0.3s;
+}
+
+.nav-link.active, .nav-link:hover {
+  background: var(--mp-navy); /* Darker blue background for active link */
+  border-radius: 4px;
+}
+
+/* The Square Contact Button */
+.btn-contact-nav {
+  background: var(--mp-red);
+  color: #fff !important;
+  border-radius: 0; /* Sharp corners like the reference */
+  padding: 12px 25px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-contact-nav:hover {
+  background: #fff;
+  color: var(--mp-navy) !important;
+}
+.nav-item {
+  margin-left: 20px; /* Space between contact button and nav links */
+}
+
+/* Social Icons */
+.nav-social a {
+  color: #fff;
+  margin-left: 15px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-decoration: none;
+}
+.nav-social a:hover { opacity: 1; color: var(--mp-red); }
+
+    .btn-red {
+      background: var(--mp-red);
+      color: var(--mp-white);
+      border: none;
+    }
+
+    .btn-red:hover {
+      background: #a8162a;
+      color: var(--mp-white);
+    }
+
+    .btn-navy {
+      background: var(--mp-navy);
+      color: var(--mp-white);
+      border: none;
+    }
+
+    .btn-navy:hover {
+      background: #03152c;
+      color: var(--mp-white);
+    }
+
+    .hero {
+      background:
+        linear-gradient(110deg, rgb(0, 30, 66), rgba(15, 45, 82, 0.82)),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0 12px, transparent 12px 24px);
+      color: var(--mp-white);
+      padding: 7rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+/* --- SAUFICO Hero Remake --- */
+.hero-saufico {
+  height: 100vh;
+  min-height: 700px;
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2070') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mp-white);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 45, 82, 0.75); /* Your Navy with 75% opacity */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.hero-line {
+  width: 60px;
+  height: 4px;
+  background: var(--mp-red);
+  margin: 0 auto 20px;
+}
+
+.hero-title {
+  font-family: 'Teko', sans-serif;
+  font-size: clamp(4rem, 10vw, 8rem); /* Massive responsive text */
+  font-weight: 700;
+  line-height: 0.9;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+.hero-lead {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  opacity: 0.9;
+}
+
+/* Rounded Outline Button like the reference */
+.btn-outline-red {
+  border: 2px solid var(--mp-red);
+  color: var(--mp-white);
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-outline-red:hover {
+  background: var(--mp-red);
+  color: var(--mp-white);
+  transform: scale(1.05);
+}
+
+/* Indicators Styling */
+.hero-indicators {
+  position: absolute;
+  bottom: 40px;
+  left: 5%;
+  z-index: 3;
+  gap: 30px;
+}
+
+.indicator {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+.indicator span {
+  font-weight: 700;
+}
+
+.indicator.active {
+  color: var(--mp-white);
+  border-bottom: 2px solid var(--mp-red);
+  padding-bottom: 5px;
+}
+
+/* --- Background Slider Logic --- */
+.hero-saufico {
+  height: 100vh;
+  min-height: 700px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mp-white);
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-bg-wrapper, .hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-bg {
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-bg.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 45, 82, 0.75);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Keep your existing Hero Title/Subtitle/Line styles below --- */
+
+.hero-subtitle {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.hero-line {
+  width: 60px;
+  height: 4px;
+  background: var(--mp-red);
+  margin: 0 auto 20px;
+}
+
+.hero-title {
+  font-family: 'Teko', sans-serif;
+  font-size: clamp(4rem, 10vw, 8rem); /* Massive responsive text */
+  font-weight: 700;
+  line-height: 0.9;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+.hero-lead {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  opacity: 0.9;
+}
+
+/* Rounded Outline Button like the reference */
+.btn-outline-red {
+  border: 2px solid var(--mp-red);
+  color: var(--mp-white);
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-outline-red:hover {
+  background: var(--mp-red);
+  color: var(--mp-white);
+  transform: scale(1.05);
+}
+
+/* Indicators Styling */
+.hero-indicators {
+  position: absolute;
+  bottom: 40px;
+  left: 5%;
+  z-index: 3;
+  gap: 30px;
+}
+
+.indicator {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+.indicator span {
+  font-weight: 700;
+}
+
+.indicator.active {
+  color: var(--mp-white);
+  border-bottom: 2px solid var(--mp-red);
+  padding-bottom: 5px;
+}
+/* Hide all slides by default */
+.hero-slide {
+  display: none;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Show the active slide */
+.hero-slide.active {
+  display: block;
+}
+
+/* Smooth Fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style for clickable indicators */
+.indicator {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator:hover {
+  color: var(--mp-red);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .section-title {
+      color: var(--mp-navy);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    .section-kicker {
+      color: var(--mp-red);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+   /* --- Testimonials Styles --- */
+.testimonial-card {
+  background: #fff;
+  padding: 40px;
+  border: 1px solid #eee;
+  position: relative;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  border-left: 5px solid var(--mp-red);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.quote-icon {
+  color: var(--mp-ash);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.testimonial-author h5 {
+  font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.testimonial-author span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Client Tags */
+.client-mini-tag {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--mp-navy);
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+   .project-card {
+  background: #fff;
+  border: 1px solid var(--mp-ash);
+  padding: 30px;
+  border-radius: 0; /* Keep it sharp and industrial */
+  border-bottom: 4px solid var(--mp-ash);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  border-bottom-color: var(--mp-red);
+  transform: translateY(-5px);
+}
+
+.project-card h4 {
+  font-family: 'Teko', sans-serif;
+  color: var(--mp-navy);
+  text-transform: uppercase;
+}
+
+    .icon-pill {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: grid;
+      place-content: center;
+      background: var(--mp-ash);
+      color: var(--mp-navy);
+      font-weight: 700;
+    }
+
+    .about-panel {
+      background: var(--mp-white);
+      border: 1px solid #dbe2ea;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .about-accent {
+      background: linear-gradient(145deg, var(--mp-red), #8f1022);
+      color: var(--mp-white);
+      height: 100%;
+      min-height: 220px;
+    }
+
+    .stat-band {
+      background: var(--mp-navy);
+      color: var(--mp-white);
+    }
+
+    .client-logo {
+      background: var(--mp-white);
+      border: 1px solid #dbe2ea;
+      border-radius: 0.7rem;
+      padding: 1rem;
+      text-align: center;
+      font-weight: 700;
+      color: #5c6773;
+    }
+
+    .footer {
+      background: var(--mp-black);
+      color: #d8d8d8;
+    }
+
+    .footer a {
+      color: #d8d8d8;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--mp-white);
+    }
+    /* --- About Section Styles --- */
+.about-section {
+  background-color: var(--mp-white);
+}
+
+.about-image-wrapper {
+  position: relative;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+.about-main-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  box-shadow: 20px 20px 0px var(--mp-ash); /* Industrial Offset */
+}
+
+.about-experience-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--mp-red);
+  color: #fff;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 10px 30px rgba(197, 30, 53, 0.3);
+}
+
+.about-experience-badge .number {
+  font-family: 'Teko', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.about-experience-badge .text {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.about-red-line {
+  width: 80px;
+  height: 5px;
+  background: var(--mp-red);
+}
+
+.text-red { color: var(--mp-red); }
+.text-navy { color: var(--mp-navy); }
+
+.about-feature {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.about-feature i {
+  color: var(--mp-red);
+  font-size: 1.2rem;
+  margin-top: 3px;
+}
+
+.about-feature h5 {
+  font-size: 1.1rem;
+  color: var(--mp-navy);
+  font-weight: 700;
+}
+/* --- Services Section Refinement --- */
+.services-section {
+  background-color: #fcfcfc;
+}
+
+.service-box {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 40px 30px;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  border-bottom: 4px solid #eee; /* Light gray base line */
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  border-bottom-color: var(--mp-red); /* Turns Red on hover */
+  box-shadow: 0 15px 40px rgba(15, 45, 82, 0.1);
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.service-num {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.5rem;
+  color: var(--mp-red);
+  font-weight: 700;
+  border-right: 2px solid #ddd;
+  padding-right: 15px;
+}
+
+.service-box h4 {
+  font-size: 1.25rem;
+  color: var(--mp-navy);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-list li {
+  color: #666;
+  font-size: 0.95rem;
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.service-list li:last-child {
+  border-bottom: none;
+}
+
+/* Featured / Highlighted Box */
+.highlighted-box {
+  background: var(--mp-navy);
+}
+.highlighted-box h4, .highlighted-box li {
+  color: #fff !important;
+}
+.highlighted-box .service-num {
+  color: var(--mp-red);
+  border-right-color: rgba(255,255,255,0.2);
+}
+/* --- Mission & Vision Pillar Styles --- */
+.mv-card {
+  background: #fff;
+  padding: 50px 30px;
+  text-align: center;
+  border: 1px solid var(--mp-ash);
+  height: 100%;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.mv-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: var(--mp-ash);
+  color: var(--mp-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  font-size: 1.8rem;
+  border-radius: 0; /* Keeps the industrial sharp-edge look */
+  transition: 0.3s;
+}
+
+.mv-heading {
+  font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--mp-navy);
+}
+
+.mv-text {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.mv-values-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.mv-values-list li {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.mv-values-list i {
+  color: var(--mp-red);
+  margin-right: 8px;
+}
+
+/* Hover & Active State */
+.mv-card:hover, .active-mv {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(15, 45, 82, 0.1);
+  border-color: transparent;
+}
+
+.mv-card:hover .mv-icon-wrapper, .active-mv .mv-icon-wrapper {
+  background: var(--mp-red);
+  color: #fff;
+}
+
+.mv-border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background: var(--mp-red);
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+}
+
+.mv-card:hover .mv-border-bottom, .active-mv .mv-border-bottom {
+  width: 100%;
+}
+.stat-band h3 {
+  font-family: 'Teko', sans-serif;
+  font-weight: 700;
+  color: var(--mp-red); /* Or your preferred brand color */
+  transition: all 0.3s ease;
+}
+/* --- LANGUAGE SWITCHING CORE --- */
+
+/* 1. The 'Hidden' Class (Crucial for your JS) */
+.hidden {
+  display: none !important;
+}
+
+/* 2. Arabic Typography Adjustment */
+[lang="ar"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* 3. RTL Layout Mirroring */
+[dir="rtl"] .ms-3 {
+  margin-right: 1rem !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .ps-lg-5 {
+  padding-right: 3rem !important;
+  padding-left: 0 !important;
+}
+
+[dir="rtl"] .about-image-wrapper {
+  padding-right: 0;
+  padding-left: 30px;
+}
+
+[dir="rtl"] .about-main-img {
+  box-shadow: -20px 20px 0px var(--mp-ash); /* Flips the industrial shadow */
+}
+
+[dir="rtl"] .about-experience-badge {
+  right: auto;
+  left: 0; /* Moves badge to the left in Arabic */
+}
+
+[dir="rtl"] .service-num {
+  border-right: none;
+  border-left: 2px solid #ddd;
+  padding-right: 0;
+  padding-left: 15px;
+}
+
+[dir="rtl"] .mv-values-list {
+  text-align: right;
+}
+
+[dir="rtl"] .mv-values-list i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Fix for Hero Indicators in RTL */
+[dir="rtl"] .hero-indicators {
+  left: auto;
+  right: 5%;
+}
+.bg-navy { background-color: #0a192f; } /* Deep Navy Brand Color */
+.text-secondary-light { color: #a8b2d1; }
+.footer-line { width: 40px; height: 3px; background-color: #e63946; } /* Red Accent */
+
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { 
+    text-decoration: none; 
+    color: #a8b2d1; 
+    transition: 0.3s; 
+}
+.footer-links a:hover { color: #e63946; padding-left: 5px; }
+
+.footer-socials a {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #a8b2d1;
+    color: #a8b2d1;
+    border-radius: 50%;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.footer-socials a:hover {
+    background-color: #e63946;
+    border-color: #e63946;
+    color: white;
+}
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px; /* Default for English view */
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: pulse-wa 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Tooltip logic */
+.wa-tooltip {
+    position: absolute;
+    right: 70px;
+    background: #333;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+
+.whatsapp-float:hover .wa-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Pulse Animation */
+@keyframes pulse-wa {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* RTL Adjustment: Move icon to left side for Arabic mode if preferred */
+html[lang="ar"] .whatsapp-float {
+    right: auto;
+    left: 30px;
+}
+html[lang="ar"] .wa-tooltip {
+    right: auto;
+    left: 70px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+}
+
+/* RTL support for footer items when Arabic is active */
+html[lang="ar"] .footer-links a:hover { padding-right: 5px; padding-left: 0; }
+html[lang="ar"] .text-md-start { text-align: right !important; }
+html[lang="ar"] .text-md-end { text-align: left !important; }
