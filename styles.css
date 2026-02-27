@@ -66,13 +66,13 @@
 
 /* Fix for the jumpy look when scrolling */
 .navigation-clean.scrolled {
-  margin-top: 10px;
-    background-color: #0f2d529f !important; /* Matches your brand navy */
+  padding: top 8px;
+    background-color: #0f2d52d3 !important; /* Matches your brand navy */
     padding: 10px 0 !important; /* Slimmer on scroll */
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-}
+
 
 @media (max-width: 991px) {
     /* Prevent the main navbar from getting "cut off" in the screenshots */
@@ -80,6 +80,7 @@
         width: 100% !important;
         left: 0 !important;
     }
+    
 }
 .brand-underline {
   height: 6px;
