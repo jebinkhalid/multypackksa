@@ -50,14 +50,37 @@
 
 .navbar-brand {
   font-family: 'Teko', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.5rem !important;
+    font-weight: 500 !important;  
   color: #fff !important;
   padding: 0;
   margin: 0;
   letter-spacing: 1px;
 }
+/* Ensure the bar stays a consistent height and look */
+.navigation-clean {
+    transition: all 0.3s ease;
+    padding: 15px 0 !important; /* Standard height */
+    background: transparent; /* Top of page */
+}
 
+/* Fix for the jumpy look when scrolling */
+.navigation-clean.scrolled {
+  margin-top: 10px;
+    background-color: #0f2d529f !important; /* Matches your brand navy */
+    padding: 10px 0 !important; /* Slimmer on scroll */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+}
+
+@media (max-width: 991px) {
+    /* Prevent the main navbar from getting "cut off" in the screenshots */
+    .navigation-clean {
+        width: 100% !important;
+        left: 0 !important;
+    }
+}
 .brand-underline {
   height: 6px;
   background: var(--mp-red); /* Your brand red */
@@ -955,3 +978,67 @@ html[lang="ar"] .wa-tooltip {
 html[lang="ar"] .footer-links a:hover { padding-right: 5px; padding-left: 0; }
 html[lang="ar"] .text-md-start { text-align: right !important; }
 html[lang="ar"] .text-md-end { text-align: left !important; }
+@media (max-width: 991px) {
+    /* 1. The Drawer Container */
+    .navbar-collapse {
+        position: fixed !important;
+        top: 0;
+        right: -100%; /* Hidden off-screen */
+        height: 100vh;
+        width: 75%; /* Narrower width like Galaxy KSA */
+        max-width: 300px;
+        background-color: #0f2d52 !important; /* Your mp-navy */
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex !important; /* Force flex for internal layout */
+        flex-direction: column !important;
+        padding: 100px 30px 40px !important;
+        z-index: 2000;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    }
+
+    .navbar-collapse.show {
+        right: 0 !important; /* Slide in */
+    }
+
+    /* 2. Fix bunched up text (Links) */
+    .navbar-nav {
+        flex-direction: column !important; /* Force vertical stack */
+        align-items: flex-start !important;
+        text-align: left !important;
+        width: 100%;
+        gap: 15px; /* Space between links */
+    }
+
+    .nav-item {
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 1.2rem !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+    }
+
+    /* 3. Language & Contact Button Area */
+    .navbar-collapse .d-flex {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: 100%;
+        margin-top: 40px;
+        gap: 30px !important;
+    }
+
+    /* 4. The 'X' Close Effect on Toggler */
+    .navbar-toggler {
+        z-index: 2001; /* Stay above the drawer */
+        border: none !important;
+        outline: none !important;
+    }
+
+    /* Change hamburger to X when open */
+    .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7l22 22M4 29L26 7'/%3e%3c/svg%3e") !important;
+    }
+}
