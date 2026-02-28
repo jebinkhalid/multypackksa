@@ -281,6 +281,49 @@
     <div class="indicator" onclick="showSlide(3)"><span>03</span> / Slide3</div>
   </div>
 </header>
+<script>
+  let slideIndex = 1;
+  const totalSlides = 3;
+  let autoSlideTimer;
+
+  // Initialize the first slide
+  showSlide(slideIndex);
+  startAutoSlide();
+
+  function showSlide(n) {
+    slideIndex = n;
+    
+    // 1. Hide all slides and backgrounds
+    const slides = document.querySelectorAll('.hero-slide');
+    const backgrounds = document.querySelectorAll('.hero-bg');
+    const indicators = document.querySelectorAll('.indicator');
+
+    slides.forEach(s => s.classList.remove('active'));
+    backgrounds.forEach(bg => bg.classList.remove('active'));
+    indicators.forEach(ind => ind.classList.remove('active'));
+
+    // 2. Show the current slide/bg/indicator
+    document.getElementById('slide-' + n).classList.add('active');
+    document.getElementById('bg-' + n).classList.add('active');
+    indicators[n - 1].classList.add('active');
+
+    // Reset the timer whenever a user clicks an indicator manually
+    resetAutoSlide();
+  }
+
+  function startAutoSlide() {
+    autoSlideTimer = setInterval(() => {
+      slideIndex++;
+      if (slideIndex > totalSlides) { slideIndex = 1; }
+      showSlide(slideIndex);
+    }, 5000); // Change slide every 5 seconds
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideTimer);
+    startAutoSlide();
+  }
+</script>
 
 <script>
   function showSlide(n) {
@@ -743,15 +786,58 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </div>
 
-    <div class="row mt-5 pt-5 border-top g-3 text-center">
-       <div class="col-12"><p class="small text-uppercase fw-bold text-muted mb-4">Industries We Empower</p></div>
-       <div class="col-4 col-md-2"><div class="client-mini-tag">Oil & Gas</div></div>
-       <div class="col-4 col-md-2"><div class="client-mini-tag">Industrial</div></div>
-       <div class="col-4 col-md-2"><div class="client-mini-tag">Commercial</div></div>
-       <div class="col-4 col-md-2"><div class="client-mini-tag">Government</div></div>
-       <div class="col-4 col-md-2"><div class="client-mini-tag">Energy</div></div>
-       <div class="col-4 col-md-2"><div class="client-mini-tag">Logistics</div></div>
+<div class="row mt-4 pt-4 border-top g-4 text-center align-items-center justify-content-center">
+    <div class="col-12">
+        <p class="small text-uppercase fw-bold text-muted mb-4">
+            <span class="en">Industries We Empower</span>
+            <span class="ar">القطاعات التي نخدمها</span>
+        </p>
     </div>
+    
+    <div class="col-6 col-md-3 col-lg-2">
+        <div class="client-logo-wrapper">
+            <img src="./assets/sabtech.png" alt="Client 1" class="client-brand-img">
+        </div>
+    </div>
+    <div class="col-6 col-md-3 col-lg-2">
+        <div class="client-logo-wrapper">
+            <img src="./assets/almarai.png" alt="Client 2" class="client-brand-img">
+        </div>
+    </div>
+    <div class="col-6 col-md-3 col-lg-2">
+        <div class="client-logo-wrapper">
+            <img src="./assets/jayspices.png" alt="Client 3" class="client-brand-img">
+        </div>
+    </div>
+    <div class="col-6 col-md-3 col-lg-2">
+        <div class="client-logo-wrapper">
+            <img src="./assets/falcon_logo_pure-grey.webp" alt="Client 4" class="client-brand-img">
+        </div>
+    </div>
+    <div class="col-6 col-md-3 col-lg-2">
+        <div class="client-logo-wrapper">
+            <img src="./assets/alsalama.webp" alt="Client 5" class="client-brand-img">
+        </div>
+    </div>
+    <div class="col-6 col-md-3 col-lg-2">
+        <div class="client-logo-wrapper">
+            <img src="./assets/cropped-united-ink-logo.webp" alt="Client 6" class="client-brand-img">
+            <label class="client-logo-label">
+                <span class="en">United Ink</span>
+
+        </div>
+    </div>
+    <div class="col-6 col-md-3 col-lg-2">
+        <div class="client-logo-wrapper">
+            <img src="./assets/kabyan hypermarket.jpg" alt="Client 7" class="client-brand-img">
+        </div>
+    </div>
+    <div class="col-6 col-md-3 col-lg-2">
+        <div class="client-logo-wrapper">
+            <img src="./assets/logo8.png" alt="Client 8" class="client-brand-img">
+        </div>
+    </div>
+</div>
   </div>
 </section>
 
@@ -842,8 +928,8 @@ document.addEventListener("DOMContentLoaded", () => {
         </p>
         <div class="footer-socials d-flex gap-3 mt-3">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/multipack.sa/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/112049380/admin/dashboard/"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
 
@@ -934,7 +1020,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })();
 </script>
-<a href="https://wa.me/966550000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+<a href="https://wa.me/966590159017" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-whatsapp"></i>
     <span class="wa-tooltip">
         <span class="en">Chat with us</span>

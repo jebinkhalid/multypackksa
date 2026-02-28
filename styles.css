@@ -1053,3 +1053,55 @@ html[lang="ar"] .text-md-end { text-align: left !important; }
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7l22 22M4 29L26 7'/%3e%3c/svg%3e") !important;
     }
 }
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 1.5s ease-in-out; /* Smooth cross-fade */
+    z-index: 0;
+}
+
+.hero-bg.active {
+    opacity: 1; /* Fade in when active */
+}
+.hero-saufico {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+/* Container for the logo */
+.client-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px; /* Reduced height to keep section tight */
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Logo Image Styling */
+.client-brand-img {
+    max-width: 100%;
+    max-height: 40px; /* Uniform height for all 8 logos */
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.client-logo-wrapper:hover .client-brand-img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Remove Horizontal Scroll Space */
+.row {
+    --bs-gutter-x: 1.5rem;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
